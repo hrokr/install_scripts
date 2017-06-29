@@ -94,5 +94,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Spoof wifi address for time limited access points
 alias rip='spoof list --wifi && sudo spoof randomize Wi-Fi && spoof list --wifi'
+
+# Call macvim by it's name, not a shortened version
 alias macvim='mvim'
+
+# override OS X's vim with MacVim
+alias vim='mvim'
