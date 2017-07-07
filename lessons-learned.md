@@ -38,21 +38,21 @@ This took a while because some fonts have long names (Droid Sans Mono for Powerl
 
 What finally worked was:
 
-:set guifont=*    
+`:set guifont=*`    
 
 ... which brought up a picklist via Edit --> Select Font. Then
 
-:set guifont?
+`:set guifont?`
 
 ... which didn't work. What did work was modifing the .vimrc with this:
 
-if has('gui_running')
-  set guifont=PASTED FONT AND SIZE HERE
-endif
+`if has('gui_running')`
+`set guifont=PASTED FONT AND SIZE HERE`
+`endif`
 
 The pasted part you get by running this command, and pasting into the appropriate section above
 
-:put =&guifont
+`:put =&guifont`
 
 So, yeah, one more problem knocked down.
 
@@ -60,4 +60,4 @@ So, yeah, one more problem knocked down.
 You should have a ~/.vim directory but will need a colors subdirectory. If you
 neither you can do it in one shot with:
 
-mkdir -p ~/.vim/colors 
+`mkdir -p ~/.vim/colors`
