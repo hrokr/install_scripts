@@ -27,4 +27,37 @@ operation to replace .test with the (then moved) originals of the other files.
 Now, to do a git init
 
 ## zsh: bad assignment while trying to alias
-Fixed by taking out the spaces around the "=".  Apparently, zsh doesn't like wasted space. 
+Fixed by taking out the spaces around the "=".  Apparently, zsh doesn't like
+wasted space.
+
+## .vimrc errors
+... and neither does vim.
+
+## changing the font and font size
+This took a while because some fonts have long names (Droid Sans Mono for Powerline Nerd Font Complete:h18 -- yeah looking at you. Arial, you're good). This get confounded when it looks like OS X truncates the name. For example, only Vim showed the full name; Fontbook didn't list the Complete as does vim's picklist.
+
+What finally worked was:
+
+:set guifont=*    
+
+... which brought up a picklist via Edit --> Select Font. Then
+
+:set guifont?
+
+... which didn't work. What did work was modifing the .vimrc with this:
+
+if has('gui_running')
+  set guifont=PASTED FONT AND SIZE HERE
+endif
+
+The pasted part you get by running this command, and pasting into the appropriate section above
+
+:put =&guifont
+
+So, yeah, one more problem knocked down.
+
+## changing the color scheme in vim
+You should have a ~/.vim directory but will need a colors subdirectory. If you
+neither you can do it in one shot with:
+
+mkdir -p ~/.vim/colors 
