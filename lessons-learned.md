@@ -46,9 +46,9 @@ What finally worked was:
 
 ... which didn't work. What did work was modifing the .vimrc with this:
 
-`if has('gui_running')`
-`set guifont=PASTED FONT AND SIZE HERE`
-`endif`
+<code> if has('gui_running')
+set guifont=PASTED FONT AND SIZE HERE
+endif <code>
 
 The pasted part you get by running this command, and pasting into the appropriate section above
 
