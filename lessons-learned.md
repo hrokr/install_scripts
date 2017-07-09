@@ -48,7 +48,7 @@ What finally worked was:
 
 <code> if has('gui_running')
 set guifont=PASTED FONT AND SIZE HERE
-endif <code>
+endif </code>
 
 The pasted part you get by running this command, and pasting into the appropriate section above
 
