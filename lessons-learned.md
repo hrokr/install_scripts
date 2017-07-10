@@ -61,3 +61,6 @@ You should have a ~/.vim directory but will need a colors subdirectory. If you
 neither you can do it in one shot with:
 
 `mkdir -p ~/.vim/colors`
+
+## ... is the ~/.tmux.conf file being loaded at all?
+keybindings for splitting windows, reloading .conf file and the color theme settings don't seem to work. I took out the theme but I'm not sure. Hot for Words must investigate.
