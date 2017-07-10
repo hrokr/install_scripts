@@ -36,7 +36,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Install L9 and avoid a Naming conflict if you've already installed a different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
-"Plugin 'bling/vim-airline' "lightweight status/tab bar
+"Plugin 'vim-airline/vim-airline' "lightweight status/tab bar
 
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'janko-m/vim-test'
@@ -174,3 +174,10 @@ inoremap <F12> <Esc>:set list!<CR>a
 "  more
 " ///////////////////////////////
 " Douglas Black would be the next set to work in
+
+
+
+" resources -------
+"https://gist.github.com/MohamedAlaa/2961058
+"https://www.fprintf.net/vimCheatSheet.html
+"http://vimsheet.com
