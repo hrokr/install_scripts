@@ -63,4 +63,13 @@ neither you can do it in one shot with:
 `mkdir -p ~/.vim/colors`
 
 ## ... is the ~/.tmux.conf file being loaded at all?
-keybindings for splitting windows, reloading .conf file and the color theme settings don't seem to work. I took out the theme but I'm not sure. Hot for Words must investigate.
+keybindings for splitting windows, reloading .conf file and the color theme settings don't seem to work. I took out the theme but I'm not sure. Hot for Words must investigate. This may be due to broken symlinks. I say that because I keep the
+following error
+
+'The airline statusline funcref function('airline#extensions#ctrlp#apply') has already been added
+
+... but the line has been commented out. So, not loading at all. I tried to redo
+the symlinks with no effect. Then I deleted the symlink, renamed the file and
+touched .tmux.conf and made couple of quick changes which I did a cat on to
+confirm it worked, then reestablished the link, confirmed it worked and am now
+finally good to go.
