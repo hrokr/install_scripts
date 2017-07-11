@@ -77,20 +77,8 @@ loading. I tried to redo the symlinks with no effect. Then I deleted the
 symlink, renamed the file and touched .tmux.conf and made couple of quick
 changes which I did a cat on to confirm it worked, then reestablished the link, confirmed it worked and am now finally good to go.
 
+
 ## Dealing with the Vim error message
     The airline statusline funcref function('airline#extensions#mundo#statusline') has already been added.The airline statusline funcref function('airline#extensions#mundo#statusline') has already been added.
 
 see: https://stackoverflow.com/questions/45040937/how-do-i-remove-duplicates-from-vim-scriptnames-file
-
-
-## Getting the bottom line to display correctly
-The bottom line was in red no matter what I did and the formatting was jacked.
-This is what I get for a) not knowing tmux already and b) using someone else's .tmux.conf files. Or, rather some othere people's conf files.
-
-### for the status line (79)
-    set -g status-left '#[fg=white](#S)'
-
-### for the status line (19)
-    set-window-option -g window-status-current-fg green
-
-... I'll combine this into something a bit better in the future.
