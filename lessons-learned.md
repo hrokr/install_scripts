@@ -20,6 +20,10 @@ spent working in order to get this.
 this:         ln -s /Volumes/Codework/dotfiles/.test ~/.test
 instead of:   ln -s  ~/Volumes/Codework/dotfiles/.test ~/.test
 
+ [EDIT]   ln -s ~/Volumes/Codework/dotfiles/.tmux.conf ~/Users/hrokr/.tmux.conf
+ seems to have actually done the trick.
+
+
 Once that was done and verified with both Atom and Vim that the alias would open
 changes could be made which were reflected in the original, it was a pretty fast
 operation to replace .test with the (then moved) originals of the other files.
@@ -64,12 +68,29 @@ neither you can do it in one shot with:
 
 ## ... is the ~/.tmux.conf file being loaded at all?
 keybindings for splitting windows, reloading .conf file and the color theme settings don't seem to work. I took out the theme but I'm not sure. Hot for Words must investigate. This may be due to broken symlinks. I say that because I keep the
-following error
+following for Vim
 
 'The airline statusline funcref function('airline#extensions#ctrlp#apply') has already been added
 
-... but the line has been commented out. So, not loading at all. I tried to redo
-the symlinks with no effect. Then I deleted the symlink, renamed the file and
-touched .tmux.conf and made couple of quick changes which I did a cat on to
-confirm it worked, then reestablished the link, confirmed it worked and am now
-finally good to go.
+... but the line has been commented out. So, it looks like neither of these are
+loading. I tried to redo the symlinks with no effect. Then I deleted the
+symlink, renamed the file and touched .tmux.conf and made couple of quick
+changes which I did a cat on to confirm it worked, then reestablished the link, confirmed it worked and am now finally good to go.
+
+## Dealing with the Vim error message
+    The airline statusline funcref function('airline#extensions#mundo#statusline') has already been added.The airline statusline funcref function('airline#extensions#mundo#statusline') has already been added.
+
+see: https://stackoverflow.com/questions/45040937/how-do-i-remove-duplicates-from-vim-scriptnames-file
+
+
+## Getting the bottom line to display correctly
+The bottom line was in red no matter what I did and the formatting was jacked.
+This is what I get for a) not knowing tmux already and b) using someone else's .tmux.conf files. Or, rather some othere people's conf files.
+
+### for the status line (79)
+    set -g status-left '#[fg=white](#S)'
+
+### for the status line (19)
+    set-window-option -g window-status-current-fg green
+
+... I'll combine this into something a bit better in the future.
