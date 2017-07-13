@@ -36,7 +36,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Install L9 and avoid a Naming conflict if you've already installed a different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
-"Plugin 'vim-airline/vim-airline' "lightweight status/tab bar
+
 
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'janko-m/vim-test'
@@ -49,6 +49,7 @@ Plugin 'simnalamburt/vim-mundo'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vimwiki/vimwiki'
+Plugin 'vim-airline/vim-airline-themes' "lightweight status/tab bar
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -167,7 +168,10 @@ inoremap <F8> <Esc>:nohl<CR>a
 noremap <F12> :set list!<CR>
 inoremap <F12> <Esc>:set list!<CR>a
 
-
+" these are needed to get the solarized theme to load http://ethanschoonover.com/solarized/vim-colors-solarized
+syntax enable
+set background=dark
+colorscheme solarized
 
 
 "  --------------------------------
