@@ -62,7 +62,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(dir_writable status root_indicator backgroun
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew docker git github git-extras git-flow npm osx)
+plugins=(brew docker git github git-extras git-flow tmux npm)
 
 source $ZSH/oh-my-zsh.sh
 
