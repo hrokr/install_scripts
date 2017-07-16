@@ -1,9 +1,33 @@
 execute pathogen#infect()
+" use Vim mode instead of pure Vi, it must be the first instruction
+set nocompatible
+
+
+" This allows for a recursive search into subfolders and provides tab completion
+" for all file-related tasks(https://www.youtube.com/watch?v=XA2WjJbmmoM&t=226s)
+set path+=**
+
+"Display all matching files that match tab completion
+set wildmenu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 "From here to line 55 are from the Vundle (https://github.com/VundleVim/Vundle.Vim)
 "quickstart directions
 
-set nocompatible              " be iMproved, required
+
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -72,8 +96,8 @@ filetype plugin indent on    " required
 " Configuration file for Vi Improved, save as ~/.vimrc to use.
 " Written on 2014-07-16 by Miko Bartnicki <mikobartnicki@gmail.com>.
 
-" use Vim mode instead of pure Vi, it must be the first instruction
-set nocompatible
+
+
 
 " Font, size, background and appearance settings
 set columns=84 lines=48 " GUI window geometry
@@ -114,9 +138,6 @@ set smartcase " ...unless capital letters are used
 filetype on " enable file type detection
 filetype plugin on " load the plugins for specific file types
 filetype indent on " automatically indent code
-
-" syntax highlighting
-syntax enable " enable syntax highlighting
 
 set background=dark
 colorscheme solarized " set color scheme, must be installed first
@@ -168,7 +189,7 @@ inoremap <F8> <Esc>:nohl<CR>a
 noremap <F12> :set list!<CR>
 inoremap <F12> <Esc>:set list!<CR>a
 
-" these are needed to get the solarized theme to load http://ethanschoonover.com/solarized/vim-colors-solarized
+" these are needed to get the solarized theme to load also syntax highlighting http://ethanschoonover.com/solarized/vim-colors-solarized
 syntax enable
 set background=dark
 colorscheme solarized
