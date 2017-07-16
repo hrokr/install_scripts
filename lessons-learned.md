@@ -125,3 +125,5 @@ I probably need to fix this.
 ... and the big one...
 
 still gotta learn tmux and vim
+
+## Vimtutor -- why isn't that better know?!?
