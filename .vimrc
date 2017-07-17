@@ -1,32 +1,15 @@
-execute pathogen#infect()
 " use Vim mode instead of pure Vi, it must be the first instruction
 set nocompatible
 
-
 " This allows for a recursive search into subfolders and provides tab completion
-" for all file-related tasks(https://www.youtube.com/watch?v=XA2WjJbmmoM&t=226s)
+" for file-related tasks(https://www.youtube.com/watch?v=XA2WjJbmmoM&t=226s)
 set path+=**
 
 "Display all matching files that match tab completion
 set wildmenu
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 "From here to line 55 are from the Vundle (https://github.com/VundleVim/Vundle.Vim)
 "quickstart directions
-
 
 filetype off                  " required
 
@@ -60,8 +43,6 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Install L9 and avoid a Naming conflict if you've already installed a different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
-
-
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'janko-m/vim-test'
 Plugin 'kien/ctrlp.vim'
@@ -92,11 +73,7 @@ filetype plugin indent on    " required
 
 "/////////////////////////////////////////////////////////////
 
-
-" Configuration file for Vi Improved, save as ~/.vimrc to use.
 " Written on 2014-07-16 by Miko Bartnicki <mikobartnicki@gmail.com>.
-
-
 
 
 " Font, size, background and appearance settings
@@ -130,9 +107,6 @@ set hlsearch " highlight search results
 set ignorecase " do case insensitive search...
 set incsearch " do incremental search
 set smartcase " ...unless capital letters are used
-
-
-
 
 " file type specific settings
 filetype on " enable file type detection
@@ -193,13 +167,6 @@ inoremap <F12> <Esc>:set list!<CR>a
 syntax enable
 set background=dark
 colorscheme solarized
-
-
-"  --------------------------------
-"  more
-" ///////////////////////////////
-" Douglas Black would be the next set to work in
-
 
 
 " resources -------
