@@ -53,6 +53,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'simnalamburt/vim-mundo'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-fugitive'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'vimwiki/vimwiki'
 Plugin 'vim-airline/vim-airline-themes' "lightweight status/tab bar
 
@@ -170,6 +171,18 @@ inoremap <F12> <Esc>:set list!<CR>a
 syntax enable
 set background=dark
 colorscheme solarized
+
+" recommended initial settings for syntastic
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 
 
 " resources -------
