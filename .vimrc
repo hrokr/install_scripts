@@ -49,7 +49,6 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'moll/vim-node'
 Plugin 'powerline/powerline-fonts'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
 Plugin 'simnalamburt/vim-mundo'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-fugitive'
@@ -86,7 +85,7 @@ set showmatch " highlight matching braces
 set showmode " show insert/replace/visual mode
 
 "use relative numbering
-set nonu
+set relativenumber
 
 if has('gui_running')
         set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete:h18
