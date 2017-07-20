@@ -37,3 +37,11 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # python3
 brew install python3
+
+# Install vundle
+git clone https://github.com/gmark/vundle.git ~/.vim/bundle/vundle
+
+# Install dotfiles
+mkdir ~/.config/nvim
+mkdir ~/.config/tmux
+mkdir ~/.config/zsh
