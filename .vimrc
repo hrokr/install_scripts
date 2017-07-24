@@ -3,6 +3,7 @@ set nocompatible
 
 " This allows for a recursive search into subfolders and provides tab completion
 " for file-related tasks(https://www.youtube.com/watch?v=XA2WjJbmmoM&t=226s)
+
 set path+=**
 
 "Display all matching files that match tab completion
@@ -14,11 +15,12 @@ set wildmenu
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
-
 " let Vundle manage Vundle, required
 
 Plugin 'VundleVim/Vundle.vim'
@@ -57,8 +59,10 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'vim-airline/vim-airline-themes' "lightweight status/tab bar
 
 " All of your Plugins must be added before the following line
+
 call vundle#end()            " required
 filetype plugin indent on    " required
+
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -75,7 +79,6 @@ filetype plugin indent on    " required
 
 " Written on 2014-07-16 by Miko Bartnicki <mikobartnicki@gmail.com>.
 
-
 " Font, size, background and appearance settings
 set columns=84 lines=48 " GUI window geometry
 set number " show line numbers
@@ -83,13 +86,18 @@ set encoding=utf-8 " encoding used for displaying file
 set ruler " show the cursor position all the time
 set showmatch " highlight matching braces
 set showmode " show insert/replace/visual mode
+set autoindent
+set ts=4
+filetype on
 
-"use relative numbering
-set relativenumber
-
+"font settings
 if has('gui_running')
         set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete:h18
 endif
+
+"use relative numbering
+set relativenumber
+set number
 
 " write settings
 set confirm " confirm :q in case of unsaved changes
@@ -145,7 +153,6 @@ if has('autocmd')
 endif
 
 " general key mappings
-
 " center view on the search result
 noremap n nzz
 noremap N Nzz
@@ -181,8 +188,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-
 
 " resources -------
 "https://gist.github.com/MohamedAlaa/2961058
