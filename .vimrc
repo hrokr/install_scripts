@@ -57,7 +57,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'vimwiki/vimwiki'
 Plugin 'vim-airline/vim-airline-themes' "lightweight status/tab bar
-
+Plugin 'RltvNmbr.vim' "Disply both relative and absolute line numbers
+"Plugin get snippets
 " All of your Plugins must be added before the following line
 
 call vundle#end()            " required
@@ -81,51 +82,50 @@ filetype plugin indent on    " required
 
 " Font, size, background and appearance settings
 set columns=84 lines=48 " GUI window geometry
-set number " show line numbers
-set encoding=utf-8 " encoding used for displaying file
-set ruler " show the cursor position all the time
-set showmatch " highlight matching braces
-set showmode " show insert/replace/visual mode
+set number              " show line numbers
+set encoding=utf-8      " encoding used for displaying file
+set ruler               " show the cursor position all the time
+set showmatch           " highlight matching braces
+set showmode            " show insert/replace/visual mode
 set autoindent
 set ts=4
-filetype on
 
 "font settings
 if has('gui_running')
         set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete:h18
 endif
 
-"use relative numbering
-set relativenumber
-set number
+"use relative numbering  -- check this agaist RltvNmbr.vim documentation
+set number              "-- check this agaist RltvNmbr.vim documentation
+"set relativenumber     "-- check this agaist RltvNmbr.vim documentation
 
 " write settings
-set confirm " confirm :q in case of unsaved changes
-set fileencoding=utf-8 " encoding used when saving file
-set nobackup " do not keep the backup~ file
+set confirm             " confirm :q in case of unsaved changes
+set fileencoding=utf-8  " encoding used when saving file
+set nobackup            " do not keep the backup~ file
 
 " edit settings
 set backspace=indent,eol,start " backspacing over everything in insert mode
-set expandtab " fill tabs with spaces
-set nojoinspaces " no extra space after '.' when joining lines
-set shiftwidth=8 " set indentation depth to 8 columns
-set softtabstop=8 " backspacing over 8 spaces like over tabs
-set tabstop=8 " set tabulator length to 8 columns
-set textwidth=80 " wrap lines automatically at 80th column
+set expandtab           " fill tabs with spaces
+set nojoinspaces        " no extra space after '.' when joining lines
+set shiftwidth=8        " set indentation depth to 8 columns
+set softtabstop=8       " backspacing over 8 spaces like over tabs
+set tabstop=8           " set tabulator length to 8 columns
+set textwidth=80        " wrap lines automatically at 80th column
 
 " search settings
-set hlsearch " highlight search results
-set ignorecase " do case insensitive search...
-set incsearch " do incremental search
-set smartcase " ...unless capital letters are used
+set hlsearch            " highlight search results
+set ignorecase          " do case insensitive search...
+set incsearch           " do incremental search
+set smartcase           " ...unless capital letters are used
 
 " file type specific settings
-filetype on " enable file type detection
-filetype plugin on " load the plugins for specific file types
-filetype indent on " automatically indent code
+filetype on             " enable file type detection
+filetype plugin on      " load the plugins for specific file types
+filetype indent on      " automatically indent code
 
 set background=dark
-colorscheme solarized " set color scheme, must be installed first
+colorscheme solarized   " set color scheme, must be installed first
 
 " characters for displaying non-printable characters
 set listchars=eol:$,tab:>-,trail:.,nbsp:_,extends:+,precedes:+
