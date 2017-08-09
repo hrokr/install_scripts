@@ -127,3 +127,20 @@ still gotta learn tmux and vim
 
 ## Code folding to label sections -- well, that's useful.
 started with the zshrc file.
+
+## Well, damn. How do I remove a bunch of dotfiles that aren't tracked anyway?
+BLUF: git rm .vim -r
+
+Here is what happened: I was reading ProVim and the author had a .vim folder in 
+addition to the .vimrc file. Considering that would be things like modules, it
+seemed like a good idea. 
+
+Not so much. 
+
+It turns out that since they are hosted on github anyway, that's something 
+github doesn't like, which I guess makes sense. I moved the .vim folder back
+and still had to wrestle with getting the dot files gone. Still some issues in
+that font and spacing is messed up as well as missing line numbers (because I
+deleted the machiene's .vimrc) but it's better than nothing.
+
+
