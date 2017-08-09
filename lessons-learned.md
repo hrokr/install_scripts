@@ -23,7 +23,6 @@ instead of:   ln -s  ~/Volumes/Codework/dotfiles/.test ~/.test
  [EDIT]   ln -s ~/Volumes/Codework/dotfiles/.tmux.conf ~/Users/hrokr/.tmux.conf
  seems to have actually done the trick.
 
-
 Once that was done and verified with both Atom and Vim that the alias would open
 changes could be made which were reflected in the original, it was a pretty fast
 operation to replace .test with the (then moved) originals of the other files.
@@ -46,7 +45,7 @@ picklist.
 
 What finally worked was:
 
-`:set guifont=*`    
+`:set guifont=*`
 
 ... which brought up a picklist via Edit --> Select Font. Then
 
@@ -86,7 +85,6 @@ symlink, renamed the file and touched .tmux.conf and made couple of quick
 changes which I did a cat on to confirm it worked, then reestablished the link,
 confirmed it worked and am now finally good to go.
 
-
 ## Dealing with the Vim error message
     The airline statusline funcref function('airline#extensions#mundo#statusline') has already been added.The airline statusline funcref function('airline#extensions#mundo#statusline') has already been added.
 
@@ -104,7 +102,6 @@ This is what I get for a) not knowing tmux already and b) using someone else's
     set-window-option -g window-status-current-fg green
 
 ... I'll combine this into something a bit better in the future.
-
 
 ## Punchlist the First
 Wherein it will be shown many of those details which are missing or deemed
@@ -126,4 +123,7 @@ I probably need to fix this.
 
 still gotta learn tmux and vim
 
-## Vimtutor -- why isn't that better know?!?
+## Vimtutor -- why isn't that better known?!?
+
+## Code folding to label sections -- well, that's useful.
+started with the zshrc file.
