@@ -103,7 +103,7 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Spoof wifi address for time limited access points. You need spoof
+# Spoof wifi address for time limited access points. You need spoof (https://github.com/feross/spoof)
 alias rip='spoof list --wifi && sudo spoof randomize Wi-Fi && spoof list --wifi'
 
 # Call macvim by it's name, not a shortened version
