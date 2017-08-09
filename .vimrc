@@ -1,12 +1,12 @@
-" use Vim mode instead of pure Vi, it must be the first instruction
+" Use Vim mode instead of pure vi; must be the first instruction
 set nocompatible
 
-" This allows for a recursive search into subfolders and provides tab completion
+" This allows for a recursive search into subfolders and provides  completion
 " for file-related tasks(https://www.youtube.com/watch?v=XA2WjJbmmoM&t=226s)
 
 set path+=**
 
-"Display all matching files that match tab completion
+"Display all matching files that match  completion
 set wildmenu
 
 "From here to line 55 are from the Vundle (https://github.com/VundleVim/Vundle.Vim)
@@ -16,11 +16,13 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 
+" Plugins
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" call vundle#begin('~/some/path/here')
 " let Vundle manage Vundle, required
 
 Plugin 'VundleVim/Vundle.vim'
@@ -56,9 +58,10 @@ Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'vimwiki/vimwiki'
-Plugin 'vim-airline/vim-airline-themes' "lightweight status/tab bar
+Plugin 'vim-airline/vim-airline-themes' "lightweight status/ bar
 Plugin 'RltvNmbr.vim' "Disply both relative and absolute line numbers
 "Plugin get snippets
+
 " All of your Plugins must be added before the following line
 
 call vundle#end()            " required
@@ -76,7 +79,18 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-"/////////////////////////////////////////////////////////////
+" Plugin settings
+
+" recommended initial settings for syntastic
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Written on 2014-07-16 by Miko Bartnicki <mikobartnicki@gmail.com>.
 
@@ -89,15 +103,14 @@ set showmatch           " highlight matching braces
 set showmode            " show insert/replace/visual mode
 set autoindent
 set ts=4
+set shortmess+=I        " kill the intro screen
 
 "font settings
 if has('gui_running')
         set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete:h18
 endif
 
-"use relative numbering  -- check this agaist RltvNmbr.vim documentation
 set number              "-- check this agaist RltvNmbr.vim documentation
-"set relativenumber     "-- check this agaist RltvNmbr.vim documentation
 
 " write settings
 set confirm             " confirm :q in case of unsaved changes
@@ -106,11 +119,7 @@ set nobackup            " do not keep the backup~ file
 
 " edit settings
 set backspace=indent,eol,start " backspacing over everything in insert mode
-set expandtab           " fill tabs with spaces
 set nojoinspaces        " no extra space after '.' when joining lines
-set shiftwidth=8        " set indentation depth to 8 columns
-set softtabstop=8       " backspacing over 8 spaces like over tabs
-set tabstop=8           " set tabulator length to 8 columns
 set textwidth=80        " wrap lines automatically at 80th column
 
 " search settings
@@ -124,18 +133,22 @@ filetype on             " enable file type detection
 filetype plugin on      " load the plugins for specific file types
 filetype indent on      " automatically indent code
 
+syntax enable           " required for solarized theme to load syntax
+                        " highlighting http://ethanschoonover.com/solarized/vim-colors-solarized
+
 set background=dark
 colorscheme solarized   " set color scheme, must be installed first
 
 " characters for displaying non-printable characters
-set listchars=eol:$,tab:>-,trail:.,nbsp:_,extends:+,precedes:+
+
+set list listchars=trail:.,nbsp:_,extends:+,precedes:+
 
 " automatic commands
 if has('autocmd')
         " file type specific automatic commands
 
-        " don't replace Tabs with spaces when editing makefiles
-        autocmd Filetype makefile setlocal noexpandtab
+        " don't replace s with spaces when editing makefiles
+        autocmd Filetype makefile setlocal noexpand
 
         " disable automatic code indentation when editing TeX and XML files
         autocmd FileType tex,xml setlocal indentexpr=
@@ -169,27 +182,20 @@ nnoremap <F5> Vip:sort i<CR>
 noremap <F8> :nohl<CR>
 inoremap <F8> <Esc>:nohl<CR>a
 
-" press F12 to toggle showing the non-printable characters
+" press F12 to toggle showing the non-prinle characters
 noremap <F12> :set list!<CR>
 inoremap <F12> <Esc>:set list!<CR>a
 
-" these are needed to get the solarized theme to load also syntax highlighting http://ethanschoonover.com/solarized/vim-colors-solarized
-syntax enable
-set background=dark
-colorscheme solarized
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
 
-" recommended initial settings for syntastic
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-" resources -------
+"------- resources -------
 "https://gist.github.com/MohamedAlaa/2961058
 "https://www.fprintf.net/vimCheatSheet.html
 "http://vimsheet.com
+"
