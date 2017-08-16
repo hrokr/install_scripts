@@ -1,26 +1,20 @@
-" Use Vim mode instead of pure vi; must be the first instruction
+" This must be the first instruction. Use Vim instead of just Vi.
 set nocompatible
 
-" This allows for a recursive search into subfolders and provides  completion
-" for file-related tasks(https://www.youtube.com/watch?v=XA2WjJbmmoM&t=226s)
-
+" This allows for a recursive search into subfolders and provides completion
+" for file-related tasks (https://www.youtube.com/watch?v=XA2WjJbmmoM&t=226s)
 set path+=**
 
 "Display all matching files that match  completion
 set wildmenu
 
-"From here to line 55 are from the Vundle (https://github.com/VundleVim/Vundle.Vim)
-"quickstart directions
-
+"From here to line 49 are for Vundle (https://github.com/VundleVim/Vundle.Vim)
 filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-
-" Plugins
-" Vundle has several different ways to bring in plugins. Read the docs.
-
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
+" Vundle has several different ways to bring in plugins. Read the docs.
+" Plugins
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'git://git.wincent.com/command-t.git'
@@ -39,6 +33,7 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'vim-airline/vim-airline-themes' "lightweight status/ bar
 Plugin 'RltvNmbr.vim'                   "show relative and absolute line #s
 Plugin 'SirVer/ultisnips'               "recommended for python dev
+Plugin 'honza/vim-snippets'
 
 " All of your Plugins must be added before the following line
 
@@ -67,12 +62,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-" Track the engine.
-Plugin 'SirVer/ultisnips'
-
-" Snippets are separated from the engine. Add this if you want them:
-Plugin 'honza/vim-snippets'
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
