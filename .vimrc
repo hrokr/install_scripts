@@ -34,7 +34,8 @@ Plugin 'vim-airline/vim-airline-themes' "lightweight status/ bar
 Plugin 'RltvNmbr.vim'                   "show relative and absolute line #s
 Plugin 'SirVer/ultisnips'               "recommended for python dev
 Plugin 'honza/vim-snippets'
-
+Plugin 'davidhalter/jedi-vim'           "autocompletion
+Plugin 'ElmCast/elm-vim'                "elm syntax and linting
 " All of your Plugins must be added before the following line
 
 call vundle#end()            " required
