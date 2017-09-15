@@ -1,15 +1,16 @@
+!/bin/sh
+
 # First thoughts. Not tested and nowhere near ready
 
-## What's the goal?
-We're looking to be able to take a stock Apple or Linux computer and auto-
-install all the prerequisite programs, add-ons and settings to clone the functionality.
+# What's the goal?
+# We're looking to be able to take a stock Apple or Linux computer and auto-
+# install all the prerequisite programs, add-ons and settings to clone the functionality.
 
-There's a good deal to learn, needless to say. Aside from familiarization with
-homebrew, iTerm, zsh, oh-my-zsh, tmux, vim and the packages that make them go
-from stock performance to greatly enhanced productivity, there is that part
-about a making a shell that will install of it is on the first go -- or have a
-good way of dealing with it.
-
+# There's a good deal to learn, needless to say. Aside from familiarization with
+# homebrew, iTerm, zsh, oh-my-zsh, tmux, vim and the packages that make them go
+# from stock performance to greatly enhanced productivity, there is that part
+# about a making a shell that will install of it is on the first go -- or have a
+# good way of dealing with it.
 
 fancy_echo "Getting Homebrew, the missing package manger for mac"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -25,20 +26,41 @@ fancy_echo "Getting oh-my-zsh"
 # oh-my-zsh
 wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
 
+#change shell to zsh
+chsh -s /usr/local/bin/zsh
+
+# remove the # symbol on the next line to always show hidden files
+# defaults write com.apple.finder AppleShowAllFiles YES
+
 #tmux
 fancy_echo "Getting tmux and such"
 brew install tmux
 brew install reattach-to-user-namespace
 
-# vim
+# vim (err, well, neovim)
 fancy_echo "Getting vim and such"
-brew install macvim
+brew install neovim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # python3
 brew install python3
 
-# Install dotfiles
-mkdir ~/.config/nvim
-mkdir ~/.config/tmux
-mkdir ~/.config/zsh
+# front end packages
+brew install elm hugo node
+
+# comms packages
+brew install tor
+brew cask install slack
+npm install spoof -g
+
+# show hidden files
+defaults write com.apple.finder AppleShowAllFiles YES
+
+# ---->>  everything seems fine up till about here.
+
+
+# make a .config file (for version control purposes)
+mkdir ~/.config
+mv -f .vimrc .config
+mv -f .zshrc .config
+cd 
