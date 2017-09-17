@@ -12,6 +12,11 @@
 # about a making a shell that will install of it is on the first go -- or have a
 # good way of dealing with it.
 
+fancy_echo() {
+  local fmt="$1"; shift # shellcheck disable=SC2059
+  printf "\n$fmt\n" "$@"
+}
+
 fancy_echo "Getting Homebrew, the missing package manger for mac"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -22,12 +27,17 @@ brew install wget
 brew install zsh
 brew install zsh-completions
 
-fancy_echo "Getting oh-my-zsh"
 # oh-my-zsh
 wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
 
+# Use oh-my-zsh's .zshrc over the intial
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+
 #change shell to zsh
 chsh -s /usr/local/bin/zsh
+
+# I didn't have any luck the above but did with the below. I may use the below as part of an if/then
+# chsh -s $(which zsh)
 
 # remove the # symbol on the next line to always show hidden files
 # defaults write com.apple.finder AppleShowAllFiles YES
@@ -55,6 +65,7 @@ npm install spoof -g
 
 # show hidden files
 defaults write com.apple.finder AppleShowAllFiles YES
+
 
 # ---->>  everything seems fine up till about here.
 
