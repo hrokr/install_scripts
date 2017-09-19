@@ -75,3 +75,12 @@ mkdir ~/.config
 mv -f .vimrc .config
 mv -f .zshrc .config
 cd 
+
+# color
+
+# add in symlins for the above
+
+# git version control of the dot files
+
+
+
