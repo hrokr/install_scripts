@@ -164,3 +164,6 @@ Right, so after changing out the HD getting thigns back up to their previous sta
 
 * getting the dotfiles in good spot (i.e., a single place that I can version control and with everything working well)
 * gettting the vim plugins to work well. This appears to be a config issue with Vundle
+* .zshrc and oh-my-zsh startup script are messed up.
+- /Users/hrokr/.zshrc:source:69: not a directory: /Users/hrokr/.dotfiles/.zshrc/oh-my-zsh.sh
+
