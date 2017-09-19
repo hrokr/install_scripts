@@ -152,3 +152,7 @@ POWERLEVEL9K_STATUS_OK_IN_NON_VERBOSE=true
 The first line make the red x’s but also wrecks the checkmarks
 The second line fixes that.
 
+## Default shell, iTerm2 and how IT JUST DOESN'T MATTER what commands you use for changing the shell in iTerm - use the prefs.
+a quick reminder:
+    bin/zsh != /usr/local/bin/zsh 
+just put that last part in the preferences --> profile --> command area and call it good.
