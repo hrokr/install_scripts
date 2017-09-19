@@ -145,14 +145,16 @@ deleted the machiene's .vimrc) but it's better than nothing.
 
 ## Replacing that annoying 127 error (or 1, 9, etc) in oh-my-zsh
 In the .zshrc file to get that annoying 127 arrow to display as just a red x, do the following:
-
+```
 POWERLEVEL9K_STATUS_VERBOSE=false
 POWERLEVEL9K_STATUS_OK_IN_NON_VERBOSE=true
-
+```
 The first line make the red x’s but also wrecks the checkmarks
 The second line fixes that.
 
 ## Default shell, iTerm2 and how IT JUST DOESN'T MATTER what commands you use for changing the shell in iTerm - use the prefs.
 a quick reminder:
-`bin/zsh != /usr/local/bin/zsh` 
+```
+bin/zsh != /usr/local/bin/zsh
+``` 
 just put that last part in the preferences --> profile --> command area and call it good.
