@@ -158,3 +158,9 @@ a quick reminder:
 bin/zsh != /usr/local/bin/zsh
 ``` 
 just put that last part in the preferences --> profile --> command area and call it good.
+
+## Punchlist - the return
+Right, so after changing out the HD getting thigns back up to their previous state has been a whole lot faster but there are some details that still need to be knocked out. Namely:
+
+* getting the dotfiles in good spot (i.e., a single place that I can version control and with everything working well)
+* gettting the vim plugins to work well. This appears to be a config issue with Vundle
