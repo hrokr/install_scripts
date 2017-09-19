@@ -143,4 +143,12 @@ and still had to wrestle with getting the dot files gone. Still some issues in
 that font and spacing is messed up as well as missing line numbers (because I
 deleted the machiene's .vimrc) but it's better than nothing.
 
+## Replacing that annoying 127 error (or 1, 9, etc) in oh-my-zsh
+In the .zshrc file to get that annoying 127 arrow to display as just a red x, do the following:
+
+POWERLEVEL9K_STATUS_VERBOSE=false
+POWERLEVEL9K_STATUS_OK_IN_NON_VERBOSE=true
+
+The first line make the red x’s but also wrecks the checkmarks
+The second line fixes that.
 
