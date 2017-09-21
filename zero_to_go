@@ -36,6 +36,9 @@ cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 #change shell to zsh
 chsh -s /usr/local/bin/zsh
 
+# powerlevel 9k for OMZ
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+
 # I didn't have any luck the above but did with the below. I may use the below as part of an if/then
 # chsh -s $(which zsh)
 
@@ -81,6 +84,8 @@ cd
 # add in symlins for the above
 
 # git version control of the dot files
+
+
 
 
 
