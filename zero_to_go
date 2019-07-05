@@ -68,8 +68,7 @@ brew install tor
 brew cask install slack
 git clone https://github.com/feross/SpoofMAC
 
-# show hidden files
-defaults write com.apple.finder AppleShowAllFiles YES
+
 
 
 # ---->>  everything seems fine up till about here.
