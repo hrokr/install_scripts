@@ -31,7 +31,7 @@ fancy_echo "Getting homebrew packages needed"
 
 brew install git
 brew install wget
-brew install zsh
+# brew install zsh  --> this should be redundant since zsh comes with macOS
 brew install zsh-completions
 
 # oh-my-zsh
