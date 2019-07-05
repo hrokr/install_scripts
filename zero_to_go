@@ -20,6 +20,13 @@ fancy_echo() {
 fancy_echo "Getting Homebrew, the missing package manger for mac"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+# Make a .dotfiles folder which will contain .zshrc, .vimrc and tmux .conf files"
+fancy_echo "Preparing for new CLI"
+touch ~/.dotfiles
+
+#change shell to zsh
+chsh -s $(which zsh)
+
 fancy_echo "Getting homebrew packages needed"
 
 brew install git
@@ -66,9 +73,12 @@ brew install python3
 # comms packages
 brew install tor
 brew cask install slack
+brew cask install firefox
 git clone https://github.com/feross/SpoofMAC
 
 
+# Data Science packages
+brew cask install anaconda
 
 
 # ---->>  everything seems fine up till about here.
