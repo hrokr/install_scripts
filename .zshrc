@@ -8,6 +8,9 @@ export GITHUB_USER="hrokr"
 
 export TERM="xterm-256color"
 
+# show hidden files
+defaults write com.apple.finder AppleShowAllFiles YES
+
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 # Theme {{{
