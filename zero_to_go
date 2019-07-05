@@ -59,7 +59,9 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 brew install python3
 
 # front end packages
-brew install elm hugo node
+# brew install elm
+# brew install hugo
+# brew install node
 
 # comms packages
 brew install tor
