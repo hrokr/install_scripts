@@ -77,9 +77,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='mvim'
-else
   export EDITOR='neovim'
+else
+  export EDITOR='macvim'
 fi
 
 # Compilation flags
@@ -103,8 +103,8 @@ fi
 alias rip='spoof list --wifi && sudo spoof randomize Wi-Fi && spoof list --wifi'
 
 # Call macvim by it's name, not a shortened version
-alias macvim='mvim'
+# alias macvim='mvim'
 
-# override OS X's vim with MacVim
-alias vim='mvim'
+# override OS X's vim with NeoVim
+alias vim='neovun'
 # }}}
