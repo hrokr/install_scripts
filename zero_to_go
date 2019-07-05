@@ -66,7 +66,7 @@ brew install python3
 # comms packages
 brew install tor
 brew cask install slack
-# npm install spoof -g ---> replace this with github.com/feross/SpoofMAC
+git clone https://github.com/feross/SpoofMAC
 
 # show hidden files
 defaults write com.apple.finder AppleShowAllFiles YES
