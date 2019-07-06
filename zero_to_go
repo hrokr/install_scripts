@@ -35,7 +35,7 @@ fancy_echo "Changing default shell to zsh"
 # sudo chsh -s $(which zsh)
 
 # I think this gets it see the party by CROAKY https://github.com/thoughtbot/laptop/issues/447
-sudo chsh -s "/usr/local/bin/zsh" "$USER" 
+sudo chsh -s "/bin/zsh" "$USER" 
 
 
 # 4 - use Homebrew to get important packages
