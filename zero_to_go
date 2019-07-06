@@ -30,11 +30,12 @@ fancy_echo "Preparing for new CLI enhancements"
 mkdir ~/.config
 
 
-
-
 # 3 - change shell to zsh
 fancy_echo "Changing default shell to zsh"
-chsh -s $(which zsh)
+# sudo chsh -s $(which zsh)
+
+# I think this gets it see the party by CROAKY https://github.com/thoughtbot/laptop/issues/447
+sudo chsh -s "/usr/local/bin/zsh" "$USER" 
 
 
 # 4 - use Homebrew to get important packages
@@ -95,8 +96,6 @@ git clone https://github.com/feross/SpoofMAC
 
 
 # ---->>  everything seems fine up till about here.
-
-# 
 mv -f .vimrc .config
 mv -f .zshrc .config
 cd 
