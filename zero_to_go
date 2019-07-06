@@ -30,6 +30,8 @@ fancy_echo "Preparing for new CLI enhancements"
 mkdir ~/.config
 mkdir ~/.config/nvim
 touch ~/.config/nvim/init.vim
+mkdir -p ~/.config/nvim/colors
+mkdir -p ~/.config/nvim/bundle
 mkdir ~/.config/zsh
 touch ~/.config/zsh/.zshrc
 mkdir ~/.config/iterm2
@@ -76,7 +78,7 @@ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/theme
 # vim (err, well, neovim)
 fancy_echo "Getting vim and such"
 brew install neovim
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
 
 # 6.2 python3
 brew install python3
