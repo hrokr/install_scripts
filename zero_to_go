@@ -28,6 +28,11 @@ fancy_echo "Getting Homebrew, the missing package manger for mac"
 # 2 - make a .config file (for version control purposes)
 fancy_echo "Preparing for new CLI enhancements"
 mkdir ~/.config
+mkdir ~/.config/nvim
+touch ~/.config/nvim/init.vim
+mkdir ~/.config/zsh
+touch ~/.config/zsh/.zshrc
+mkdir ~/.config/iterm2
 
 
 # 3 - change shell to zsh
