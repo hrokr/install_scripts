@@ -12,83 +12,95 @@
 # about a making a shell that will install of it is on the first go -- or have a
 # good way of dealing with it.
 
+
+# 0 - Improve messaging
 fancy_echo() {
   local fmt="$1"; shift # shellcheck disable=SC2059
   printf "\n$fmt\n" "$@"
 }
 
+
+# 1 - Install Homebrew
 fancy_echo "Getting Homebrew, the missing package manger for mac"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-# Make a .dotfiles folder which will contain .zshrc, .vimrc and tmux .conf files"
-fancy_echo "Preparing for new CLI"
-touch ~/.dotfiles
 
-#change shell to zsh
+# 2 - make a .config file (for version control purposes)
+fancy_echo "Preparing for new CLI enhancements"
+mkdir ~/.config
+
+
+
+
+# 3 - change shell to zsh
+fancy_echo "Changing default shell to zsh"
 chsh -s $(which zsh)
 
-fancy_echo "Getting homebrew packages needed"
 
+# 4 - use Homebrew to get important packages
+fancy_echo "Getting homebrew managed packages and files"
 brew install git
 brew install wget
-# brew install zsh  --> this should be redundant since zsh comes with macOS
 brew install zsh-completions
 
-# oh-my-zsh
+
+# 5 - terminal improvements iTerm2 and oh-my-zsh
+fancy_echo "Getting iTerm2"
+brew cask install iterm2
+fancy_echo "Getting Oh-My-ZSH -- there will probably be a password check here"
 wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
 
-# Use oh-my-zsh's .zshrc over the intial
-cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-
-#change shell to zsh
-chsh -s /usr/local/bin/zsh
-
-# powerlevel 9k for OMZ
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
-
-# I didn't have any luck the above but did with the below. I may use the below as part of an if/then
-# chsh -s $(which zsh)
-
 # remove the # symbol on the next line to always show hidden files
-# defaults write com.apple.finder AppleShowAllFiles YES
+fancy_echo "Changing Apple finder settings to always show hidden (aka, dot) files"
+defaults write com.apple.finder AppleShowAllFiles YES
 
-#tmux
+# Use oh-my-zsh's .zshrc over the intial
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.dotfiles/.zshrc
+
 fancy_echo "Getting tmux and such"
 brew install tmux
 brew install reattach-to-user-namespace
 
+# powerlevel 9k for OMZ
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+
+
+# 6 - Development environment 
+# 6.1 text editor
 # vim (err, well, neovim)
 fancy_echo "Getting vim and such"
 brew install neovim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-# python3
+# 6.2 python3
 brew install python3
 
+# 6.3 Data Science packages
+fancy_echo "Jupyter notebooks and other Anaconda goodness"
+brew cask install anaconda
+
+# 6.4 
 # front end packages
 # brew install elm
 # brew install hugo
 # brew install node
 
-# comms packages
+
+# 7 - comms packages
+fancy_echo "Upgrading your comms package"
 brew install tor
 brew cask install slack
 brew cask install firefox
 git clone https://github.com/feross/SpoofMAC
 
 
-# Data Science packages
-brew cask install anaconda
-
-
 # ---->>  everything seems fine up till about here.
 
-
-# make a .config file (for version control purposes)
-mkdir ~/.config
+# 
 mv -f .vimrc .config
 mv -f .zshrc .config
 cd 
+
 
 # color
 
