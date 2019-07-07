@@ -63,7 +63,7 @@ fancy_echo "Changing Apple finder settings to always show hidden (aka, dot) file
 defaults write com.apple.finder AppleShowAllFiles YES
 
 # Use oh-my-zsh's .zshrc over the intial
-cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.dotfiles/.zshrc
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.config/zsh/.zshrc
 
 fancy_echo "Getting tmux and such"
 brew install tmux
