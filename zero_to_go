@@ -69,7 +69,12 @@ fancy_echo "Getting tmux and such"
 brew install tmux
 brew install reattach-to-user-namespace
 
-# powerlevel 9k for OMZ
+# Add in powerline fonts and powerlevel 9k for OMZ
+fancy_echo "Getting powerline fonts for that L33t HaX0r look"
+git clone https://github.com/powerline/fonts.git
+cd fonts
+./install.sh
+
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 
 
@@ -110,11 +115,16 @@ cd
 
 # color
 
+# plugins for zsh
+fancy_echo "Enhancing git integration"
+brew install git-flow
+
+
 # add in symlins for the above
 
 # git version control of the dot files
 
-
-
-
+# Misc programs
+fancy_echo "Adding calibre to manage e-books"
+brew cask install calibre
 
