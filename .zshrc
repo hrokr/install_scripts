@@ -108,4 +108,5 @@ alias rip='spoof list --wifi && sudo spoof randomize Wi-Fi && spoof list --wifi'
 
 # override OS X's vim with NeoVim
 alias vim='nvim'
+alias ls='ls -a'
 # }}}
