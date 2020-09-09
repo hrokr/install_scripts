@@ -64,13 +64,14 @@ fancy_echo "Getting tmux and such"
 brew install tmux
 brew install reattach-to-user-namespace
 
-# Add in powerline fonts and powerlevel 9k for OMZ
+# Add in powerline fonts and powerlevel 10k for OMZ
 fancy_echo "Getting powerline fonts for that L33t HaX0r look"
 git clone https://github.com/powerline/fonts.git
 cd fonts
 ./install.sh
 
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+brew install romkatv/powerlevel10k/powerlevel10k
+echo 'source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
 
 # 6 - Development environment 
 
