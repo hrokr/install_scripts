@@ -12,12 +12,8 @@ export TERM="xterm-256color"
 defaults write com.apple.finder AppleShowAllFiles YES
 
 # Theme {{{
-POWERLEVEL9K_MODE='awesome-fontconfig'
-ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
-
-# The zsh default is user@computer plus all the subdirecties. This saves space.
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(dir_writable status root_indicator background_jobs root_indicator)
+# Not needed for powerlevel10k installed via Homebrew.
+# But needed for other themes
 # }}}
 
 # oh-my-zsh settings {{{
