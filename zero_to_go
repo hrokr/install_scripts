@@ -19,11 +19,9 @@ fancy_echo() {
   printf "\n$fmt\n" "$@"
 }
 
-
 # 1 - Install Homebrew
 fancy_echo "Getting Homebrew, the missing package manger for mac"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
 
 # 2 - make a .config file (for version control purposes)
 fancy_echo "Preparing for new CLI enhancements"
@@ -36,7 +34,6 @@ mkdir ~/.config/zsh
 touch ~/.config/zsh/.zshrc
 mkdir ~/.config/iterm2
 
-
 # 3 - change shell to zsh
 fancy_echo "Changing default shell to zsh"
 # sudo chsh -s $(which zsh)
@@ -44,13 +41,11 @@ fancy_echo "Changing default shell to zsh"
 # I think this gets it see the party by CROAKY https://github.com/thoughtbot/laptop/issues/447
 sudo chsh -s "/bin/zsh" "$USER" 
 
-
 # 4 - use Homebrew to get important packages
 fancy_echo "Getting homebrew managed packages and files"
 brew install git
 brew install wget
 brew install zsh-completions
-
 
 # 5 - terminal improvements iTerm2 and oh-my-zsh
 fancy_echo "Getting iTerm2"
@@ -75,17 +70,17 @@ git clone https://github.com/powerline/fonts.git
 cd fonts
 ./install.sh
 
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
-
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 # 6 - Development environment 
+
 # 6.1 text editor
 # vim (err, well, neovim)
 fancy_echo "Getting vim and such"
 brew install neovim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
 
-# 6.2 python3
+# 6.2 python3 -- not actually needed since we're going to be using Anaconda's python
 brew install python3
 
 # 6.3 Data Science packages
@@ -98,14 +93,12 @@ brew cask install anaconda
 # brew install hugo
 # brew install node
 
-
 # 7 - comms packages
 fancy_echo "Upgrading your comms package"
 brew install tor
 brew cask install slack
 brew cask install firefox
 git clone https://github.com/feross/SpoofMAC
-
 
 # ---->>  everything seems fine up till about here.
 mv -f .vimrc .config
@@ -118,7 +111,6 @@ cd
 # plugins for zsh
 fancy_echo "Enhancing git integration"
 brew install git-flow
-
 
 # add in symlins for the above
 
