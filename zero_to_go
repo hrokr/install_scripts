@@ -34,8 +34,8 @@ mkdir ~/.config/zsh
 touch ~/.config/zsh/.zshrc
 mkdir ~/.config/iterm2
 
-# 3 - change shell to zsh
-fancy_echo "Changing default shell to zsh"
+# 3 - change shell to zsh -- Not needed since iOS changed default shell to zsh in fall 2019
+# fancy_echo "Changing default shell to zsh"
 # sudo chsh -s $(which zsh)
 
 # I think this gets it see the party by CROAKY https://github.com/thoughtbot/laptop/issues/447
