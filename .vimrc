@@ -6,8 +6,10 @@ set nocompatible
 set path+=**
 
 
-
+""""""""""""""""""""""""""""""""""""""""""""""""
 " General Settings
+""""""""""""""""""""""""""""""""""""""""""""""""
+
 set hidden
 set relativenumber
 set number
@@ -21,8 +23,10 @@ set list
 " set listchars = {there is some stuff missing here}
 
 
-
+""""""""""""""""""""""""""""""""""""""""""""""""
 " Font, size, background and appearance settings
+""""""""""""""""""""""""""""""""""""""""""""""""
+
 set columns=84 lines=48 " GUI window geometry
 set number              " show line numbers
 set encoding=utf-8      " encoding used for displaying file
@@ -32,15 +36,11 @@ set showmode            " show insert/replace/visual mode
 set autoindent
 set ts=4
 set shortmess+=I        " kill the intro screen
-
 set tabstop=4
 set softtabstop=4       " when indenting with '>', use 4 spaces width
 set shiftwidth=4        " on pressing tab, insert 4 spaces
 set expandtab
 
-
-
-"font settings
 if has('gui_running')
 	set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete:h18
 
@@ -94,8 +94,10 @@ if has('gui_running')
 		autocmd BufWritePre * :%s/\s\+$//ge
 	endif
 
-" Plugins 
 
+""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins 
+""""""""""""""""""""""""""""""""""""""""""""""""
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -104,8 +106,9 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 
-" key remappings
-
+""""""""""""""""""""""""""""""""""""""""""""""""
+" Key Remappings
+""""""""""""""""""""""""""""""""""""""""""""""""
 
 " center view on search result
 noremap n nzz
@@ -119,7 +122,6 @@ noremap <F4> mqggVG='qzza
 noremap <F5> :sort i<CR>
 noremap <F5> Vip:sort i<CR>
 
-
 " press F8 to turn the search results highlight off
 noremap <F8> :nohl<CR>
 inoremap <F8> <Esc>:nohl<CR>a
@@ -127,5 +129,3 @@ inoremap <F8> <Esc>:nohl<CR>a
 " press F12 to toggle showing the non-prinle characters
 noremap <F12> :set list!<CR>
 inoremap <F12> <Esc>:set list!<CR>a
-
-
