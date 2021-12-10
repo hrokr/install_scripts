@@ -8,72 +8,13 @@ set path+=**
 "Display all matching files that match  completion
 set wildmenu
 
-"From here to line 49 are for Vundle (https://github.com/VundleVim/Vundle.Vim)
-filetype off                  " required
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 
-" Vundle has several different ways to bring in plugins. Read the docs.
-" Plugins
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'git://git.wincent.com/command-t.git'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'edkolev/tmuxline.vim'
-Plugin 'janko-m/vim-test'
-Plugin 'kien/ctrlp.vim'
-Plugin 'moll/vim-node'
-Plugin 'powerline/powerline-fonts'
-Plugin 'scrooloose/nerdtree'
-Plugin 'simnalamburt/vim-mundo'
-Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-fugitive'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'vimwiki/vimwiki'
-Plugin 'vim-airline/vim-airline-themes' "lightweight status/ bar
-Plugin 'RltvNmbr.vim'                   "show relative and absolute line #s
-Plugin 'SirVer/ultisnips'               "recommended for python dev
-Plugin 'honza/vim-snippets'
-Plugin 'davidhalter/jedi-vim'           "autocompletion
-Plugin 'ElmCast/elm-vim'                "elm syntax and linting
-Plugin 'Valloric/YouCompleteMe'         "code completion engine
-" All of your Plugins must be added before the following line
-
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-" A few key Vundle commands
-"filetype plugin on - Use this to ingnore plugin indent changes
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache:w
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-" see :h vundle for more details or wiki for FAQ
-
-" Put non-Plugin stuff after this line
-
-" Plugin settings
-
-" recommended initial settings for syntastic
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-
-" Written on 2014-07-16 by Miko Bartnicki <mikobartnicki@gmail.com>.
 
 " Font, size, background and appearance settings
 set columns=84 lines=48 " GUI window geometry
@@ -89,7 +30,6 @@ set shortmess+=I        " kill the intro screen
 "font settings
 if has('gui_running')
         set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete:h18
-endif
 
 set number              "-- check this agaist RltvNmbr.vim documentation
 
@@ -114,8 +54,9 @@ filetype on             " enable file type detection
 filetype plugin on      " load the plugins for specific file types
 filetype indent on      " automatically indent code
 
-syntax enable           " required for solarized theme to load syntax
-                        " highlighting http://ethanschoonover.com/solarized/vim-colors-solarized
+
+
+" highlighting http://ethanschoonover.com/solarized/vim-colors-solarized
 
 set background=dark
 colorscheme solarized   " set color scheme, must be installed first
@@ -167,7 +108,6 @@ inoremap <F8> <Esc>:nohl<CR>a
 noremap <F12> :set list!<CR>
 inoremap <F12> <Esc>:set list!<CR>a
 
-filetype plugin indent on
 " show existing tab with 4 spaces width
 set tabstop=4
 " when indenting with '>', use 4 spaces width
@@ -175,8 +115,3 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
-"------- resources -------
-"https://gist.github.com/MohamedAlaa/2961058
-"https://www.fprintf.net/vimCheatSheet.html
-"http://vimsheet.com
-"
