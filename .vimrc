@@ -106,7 +106,7 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-
+Plug 'tpope/vim-sensible'
 """"""""""""""""""""""""""""""""""""""""""""""""
 " Key Remappings
 """"""""""""""""""""""""""""""""""""""""""""""""
