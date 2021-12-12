@@ -107,6 +107,9 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""
 " Key Remappings
 """"""""""""""""""""""""""""""""""""""""""""""""
