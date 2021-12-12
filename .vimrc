@@ -9,7 +9,15 @@ set path+=**
 """"""""""""""""""""""""""""""""""""""""""""""""
 " General Settings
 """"""""""""""""""""""""""""""""""""""""""""""""
+set columns=84 lines=48 " GUI window geometry
 
+set number              " show line numbers
+set encoding=utf-8      " encoding used for displaying file
+set ruler               " show the cursor position all the time
+set showmatch           " highlight matching braces
+set showmode            " show insert/replace/visual mode
+set autoindent
+set expandtab
 set hidden
 set relativenumber
 set number
@@ -22,24 +30,17 @@ set wildmenu
 set list
 " set listchars = {there is some stuff missing here}
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-" Font, size, background and appearance settings
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-set columns=84 lines=48 " GUI window geometry
-set number              " show line numbers
-set encoding=utf-8      " encoding used for displaying file
-set ruler               " show the cursor position all the time
-set showmatch           " highlight matching braces
-set showmode            " show insert/replace/visual mode
-set autoindent
 set ts=4
 set shortmess+=I        " kill the intro screen
 set tabstop=4
 set softtabstop=4       " when indenting with '>', use 4 spaces width
 set shiftwidth=4        " on pressing tab, insert 4 spaces
-set expandtab
+
+if has("gui_running")
+       echo "yes, we have a GUI"
+    else
+       echo "Boring old console"
+    endif
 
 if has('gui_running')
 	set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete:h18
