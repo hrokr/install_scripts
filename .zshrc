@@ -99,9 +99,6 @@ fi
 # Spoof wifi address for time limited access points. You need spoof (https://github.com/feross/spoof)
 alias rip='spoof list --wifi && sudo spoof randomize Wi-Fi && spoof list --wifi'
 
-# Call macvim by it's name, not a shortened version
-# alias macvim='mvim'
-
 # override OS X's vim with NeoVim
 alias vim='nvim'
 alias ls='ls -a'
