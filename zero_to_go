@@ -1,123 +1,87 @@
 !/bin/sh
 
-# First thoughts. Not tested and nowhere near ready
-
-# What's the goal?
-# We're looking to be able to take a stock Apple or Linux computer and auto-
-# install all the prerequisite programs, add-ons and settings to clone the functionality.
-
-# There's a good deal to learn, needless to say. Aside from familiarization with
-# homebrew, iTerm, zsh, oh-my-zsh, tmux, vim and the packages that make them go
-# from stock performance to greatly enhanced productivity, there is that part
-# about a making a shell that will install of it is on the first go -- or have a
-# good way of dealing with it.
-
-
 # 0 - Improve messaging
 fancy_echo() {
   local fmt="$1"; shift # shellcheck disable=SC2059
   printf "\n$fmt\n" "$@"
 }
 
-# 1 - Install Homebrew
-fancy_echo "Getting Homebrew, the missing package manger for mac"
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-# 2 - make a .config file (for version control purposes)
-fancy_echo "Preparing for new CLI enhancements"
-mkdir ~/.config
-mkdir ~/.config/nvim
-touch ~/.config/nvim/init.vim
-mkdir -p ~/.config/nvim/colors
-mkdir -p ~/.config/nvim/bundle
-mkdir ~/.config/zsh
-touch ~/.config/zsh/.zshrc
-mkdir ~/.config/iterm2
-
-# 3 - change shell to zsh -- Not needed since iOS changed default shell to zsh in fall 2019
-# fancy_echo "Changing default shell to zsh"
-# sudo chsh -s $(which zsh)
-
-# I think this gets it see the party by CROAKY https://github.com/thoughtbot/laptop/issues/447
-sudo chsh -s "/bin/zsh" "$USER" 
-
-# 4 - use Homebrew to get important packages
-fancy_echo "Getting homebrew managed packages and files"
-brew install git
-brew install wget
-brew install zsh-completions
-
-# 5 - terminal improvements iTerm2 and oh-my-zsh
-fancy_echo "Getting iTerm2"
-brew cask install iterm2
-fancy_echo "Getting Oh-My-ZSH -- there will probably be a password check here"
-wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
-
 # remove the # symbol on the next line to always show hidden files
 fancy_echo "Changing Apple finder settings to always show hidden (aka, dot) files"
 defaults write com.apple.finder AppleShowAllFiles YES
 
+
+# 1 - Install Homebrew
+fancy_echo "Getting Homebrew, becase mac, for some reason, doesn't come with a package manageer"
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+
+# 2 - Use Homebrew to get important packages
+fancy_echo "Using Homebrew to packages and files which it will later manage for you"
+fancy_echo "Adding calibre to manage e-books"
+brew cask install calibre
+fancy_echo "Adding and enhanced clipboard clipy"
+brew install clipy
+fancy_echo "Adding Firefox"
+brew cask install firefox
+
+
+# 3 - Terminal improvements WezTerm and Oh-My-Zsh
+fancy_echo "Upgrading your terminal to WezTerm"
+brew install --cask wezterm
+
+
+fancy_echo "Getting Oh-My-ZSH -- there may be a password check here"
+wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+brew install zsh-completions
+
 # Use oh-my-zsh's .zshrc over the intial
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.config/zsh/.zshrc
-
-fancy_echo "Getting tmux and such"
-brew install tmux
-brew install reattach-to-user-namespace
-
-# Add in powerline fonts and powerlevel 10k for OMZ
-fancy_echo "Getting powerline fonts for that L33t HaX0r look"
-git clone https://github.com/powerline/fonts.git
-cd fonts
-./install.sh
-
-brew install romkatv/powerlevel10k/powerlevel10k
-echo 'source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
-
-# 6 - Development environment 
-
-# 6.1 text editor
-# vim (err, well, neovim)
-fancy_echo "Getting vim and such"
-brew install neovim
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
-
-# 6.2 python3 -- not actually needed since we're going to be using Anaconda's python
-brew install python3
-
-# 6.3 Data Science packages
-fancy_echo "Jupyter notebooks and other Anaconda goodness"
-brew cask install anaconda
-
-# 6.4 
-# front end packages
-# brew install elm
-# brew install hugo
-# brew install node
-
-# 7 - comms packages
-fancy_echo "Upgrading your comms package"
-brew install tor
-brew cask install slack
-brew cask install firefox
-git clone https://github.com/feross/SpoofMAC
-
-# ---->>  everything seems fine up till about here.
-mv -f .vimrc .config
-mv -f .zshrc .config
-cd 
-
-
-# color
 
 # plugins for zsh
 fancy_echo "Enhancing git integration"
 brew install git-flow
 
-# add in symlins for the above
+# Add in powerline fonts and powerlevel 10k for OMZ
+fancy_echo "The Sentō-ryoku! it's over 9,000! over 10,000!"
+brew install romkatv/powerlevel10k/powerlevel10k
+echo 'source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
 
-# git version control of the dot files
+# Add in powerline fonts and
+"Getting powerline fonts for that 'L33t HaX0r' look"
+git clone https://github.com/powerline/fonts.git
+cd fonts
+./install.sh
 
-# Misc programs
-fancy_echo "Adding calibre to manage e-books"
-brew cask install calibre
+
+# 4 - Set up development environment 
+fancy_echo "This is the big one. Let's set up the base development environment"
+fancy_echo "Getting the current version of Python"
+brew install python
+fancy_echo "Downloading the OG's - sed, awk, wget, tmux"
+brew install gnu-sed
+brew install gawk
+brew install wget
+brew install tmux
+brew install reattach-to-user-namespace
+fancy_echo "Downloading (neo)vim"
+brew install neovim
+fancy_echo "Git, of course"
+brew install git
+fancy_echo "Aerospac"
+brew install --cask nikitabobko/tap/aerospace
+
+
+# 4.1 Data Science packages
+fancy_echo "Jupyter notebooks and other Anaconda goodness"
+#brew cask install anaconda
+
+
+# 5 - comms packages
+fancy_echo "Upgrading your comms package"
+brew install tor
+brew cask install firefox
+# git clone https://github.com/feross/SpoofMAC # not sure if this works still I use my cell phone and a vpn
+
+
 
